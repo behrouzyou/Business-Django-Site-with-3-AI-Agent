@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django.contrib.sitemaps",
     "debug_toolbar",
+    "orders",
 
     "rest_framework",
     "django_filters",
@@ -201,8 +202,8 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.AllowAny",
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        # "rest_framework_simplejwt.authentication.JWTAuthentication",
-        'accounts.authenticator.CustomCookieJWTAuthenticator',
+         "rest_framework_simplejwt.authentication.JWTAuthentication",
+        #'accounts.authenticator.CustomCookieJWTAuthenticator',
     ],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     "EXCEPTION_HANDLER": "utils.core.exceptions.custom_exception_handler",
