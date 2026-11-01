@@ -13,8 +13,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 from datetime import timedelta
 from pathlib import Path
 from decouple import config
-
-
+from django.conf.global_settings import LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -59,6 +58,7 @@ INSTALLED_APPS = [
     "django.contrib.sitemaps",
     "debug_toolbar",
     "orders",
+    "support",
 
     "rest_framework",
     "django_filters",
@@ -386,3 +386,5 @@ if config("ENABLE_WHITENOISE", cast=bool, default=False):
 
 # gzip config
 GZIP_MIN_LENGTH = 500
+LOGIN_REDIRECT_URL='/orders/'
+LOGOUT_REDIRECT_URL='/login/'
