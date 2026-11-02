@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 from datetime import timedelta
 from pathlib import Path
 from decouple import config
+import os
 from django.conf.global_settings import LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -388,3 +389,7 @@ if config("ENABLE_WHITENOISE", cast=bool, default=False):
 GZIP_MIN_LENGTH = 500
 LOGIN_REDIRECT_URL='/orders/'
 LOGOUT_REDIRECT_URL='/login/'
+
+OPENAI_API_KEY = config("OPENAI_API_KEY")
+OPENAI_BASE_URL = config("OPENAI_BASE_URL")
+OPENAI_MODEL = config("OPENAI_MODEL")

@@ -3,7 +3,7 @@ from datetime import timedelta
 from orders.models import Order, RefundRequest
 from django.utils import timezone
 from .tracking_data import DELIVERY_DATA
-# from .rag import search_knowledge_base as rag_search
+from .rag import search_knowledge_base as rag_search
 
 
 def get_order_details(order_id):
@@ -88,7 +88,7 @@ def get_customer_risk_profile(user_id):
     }
 
 
-# wrapper function
-# def search_knowledge_base(query):
-#     result = rag_search(query)
-#     return {"result": result}
+#wrapper function
+def search_knowledge_base(query):
+    result = rag_search(query)
+    return {"result": result}
